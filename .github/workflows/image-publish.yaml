@@ -9,6 +9,6 @@ jobs:
     uses: swettoth0812/my-cicd-lab/.github/workflows/image-publish.yaml@main
     with:
       image-name: ${{ github.event.repository.name }}
-      tags: latest,${{ github.sha }}
+      tags: ${{ github.sha }}
     secrets:
       GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
