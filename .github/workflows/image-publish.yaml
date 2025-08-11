@@ -1,0 +1,14 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  call-docker-workflow:
+    uses: swettoth0812/my-cicd-lab/.github/workflows/image-publish.yml@main
+    with:
+      image-name: ${{ github.event.repository.name }}
+      tags: latest,${{ github.sha }}
+    secrets:
+      GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
