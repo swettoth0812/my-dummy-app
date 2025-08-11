@@ -7,6 +7,9 @@ on:
 jobs:
   call-docker-workflow:
     uses: swettoth0812/my-cicd-lab/.github/workflows/image-publish.yaml@main
+    permissions:
+      contents: read
+      packages: write
     with:
       image-name: ${{ github.event.repository.name }}
       tags: ${{ github.sha }}
