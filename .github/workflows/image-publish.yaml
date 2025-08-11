@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches: [main]
-
+  workflow_dispatch:
 jobs:
   call-docker-workflow:
     uses: swettoth0812/my-cicd-lab/.github/workflows/image-publish.yaml@main
